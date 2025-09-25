@@ -3,4 +3,12 @@ const conselhos = [
     "A persistência realiza o impossível", "Aprenda algo novo hoje",
     "Seja gentil com todos que encontrar."
 ]
-console.log ("Arquivo de Script carregado. Array de conselhos prontos.");
+const conselhoTexto = document.getElementById('conselhoTexto');
+const novoConselhoBtn = document.getElementById('novoConselhoBtn');
+
+function gerarConselho () {
+    //BUG INTENCIONAL AQUI
+    const indice = Math.floor(Math.random() * (conselhos.lenght + 1));
+    conselhoTexto.textContent = conselhos [indice];
+}
+novoConselhoBtn.addEventListener('click', gerarConselho);
